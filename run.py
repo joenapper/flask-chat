@@ -22,7 +22,7 @@ def index():
         session["username"] = request.form["username"]
 
     if "username" in session:
-        return redirect(session["username"]) 
+        return redirect(session["username"])
 
     return render_template("index.html")
 
@@ -30,7 +30,8 @@ def index():
 @app.route('/<username>')
 def user(username):
     # Display Chat Messages
-    return render_template("chat.html", username=username, chat_messages=messages)
+    return render_template("chat.html",
+                           username=username, chat_messages=messages)
 
 
 @app.route('/<username>/<message>')
