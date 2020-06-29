@@ -19,9 +19,19 @@
     {% endfor %}
 
     <script>
+        let textbox = document.getElemendById("message")
+
         let timer = setTimeout(function() {
             location.reload();
         }, 5000)
+
+        textbox.onkeydown = function(e) {
+            clearTimeout(timer)
+
+            timer = setTimeout(function() {
+                location.reload();
+            }, 5000)
+        }
     </script>
 </body>
 </html>
