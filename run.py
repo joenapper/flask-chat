@@ -10,6 +10,11 @@ def add_messages(username, message):
     messages.append("{}: {}".format(username, message))
 
 
+def get_all_messages():
+    # Gets All Messages And Separates Them With a Br(Line Break)
+    return "<br>".join(messages)
+
+
 @app.route('/')
 def index():
     # Main Page With Instructions
@@ -19,7 +24,7 @@ def index():
 @app.route('/<username>')
 def user(username):
     # Display Chat Messages
-    return "Welcome, {0} - {1}".format(username, messages)
+    return "Welcome, {0} - {1}".format(username, get_all_messages())
 
 
 @app.route('/<username>/<message>')
