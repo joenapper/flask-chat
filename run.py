@@ -12,11 +12,13 @@ def index():
 
 @app.route('/<username>')
 def user(username):
+    # Display Chat Messages
     return "Hi " + username
 
 
 @app.route('/<username>/<message>')
 def send_message(username, message):
+    # Create a New Message And Redirect Back To The Chat Page
     return "{0}: {1}".format(username, message)
 
 
